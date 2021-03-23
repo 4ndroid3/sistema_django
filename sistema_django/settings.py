@@ -119,3 +119,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+AUTH_USER_MODEL = 'Users.User'
+AUTH_AUTHENTICATION_TYPE = 'both' # valid values are: 'username', 'email', 'both'
+AUTHENTICATION_BACKENDS = ['Users.backends.UsernameOrEmailLoginModelBackend']

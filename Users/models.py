@@ -3,12 +3,14 @@
 # Django Imports
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import User
+
 
 # Project Imports
 
-class User(AbstractUser):
-    """ Custom User """
-    pass
+# class User(AbstractUser):
+#     """ Custom User """
+#     pass
 
 class Profile(models.Model):
     """ Profile Model 
@@ -22,7 +24,7 @@ class Profile(models.Model):
     """
     
     id_users = models.OneToOneField(
-        'User',
+        User,
         default = None,
         on_delete = models.CASCADE,
         help_text = 'User name / Account name',
